@@ -117,7 +117,7 @@ router.post("/upload", upload.single("file"), async (req, res) => {
         formData.append("requestId", requestId);
         formData.append("file", fs.createReadStream(csvFilePath));
 
-        await axios.post("http://localhost:3000/webhook", formData, {
+        await axios.post(`${process.env.HOST_URL}/webhook`, formData, {
           headers: formData.getHeaders(), 
         });
         console.log("Webhook called successfully");
