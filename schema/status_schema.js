@@ -7,6 +7,10 @@ const schema=new MongooseSchema(
         },
         requestId:{
             type:String
+        },
+        createdAt:{
+            type:Date,
+            default:Date.now
         }
     }
 );
